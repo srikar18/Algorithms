@@ -20,7 +20,7 @@ void deleteEnd();
 void display();
 void displayReverse(struct node* p);
 void reverseList();
-// void sortList();
+void sortList();
 
 int main(){
   int ch;
