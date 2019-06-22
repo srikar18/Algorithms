@@ -20,7 +20,7 @@ void deleteEnd();
 void display();
 void displayReverse(struct node* p);
 void reverseList();
-void sortList();
+// void sortList();
 
 int main(){
   int ch;
@@ -188,19 +188,5 @@ void reverseList(){
 }
 
 void sortList(){
-  int data,tmp;
-  temp=head;
-  while(temp->link!=NULL){
-    data=temp->data;
-    temp1=temp->link;
-    while(temp1->link!=NULL){
-      if(temp1->data<data){
-        tmp=data;
-        data=temp1->data;
-        temp1->data=tmp;
-      }
-      temp1=temp1->link;
-    }
-    temp=temp->link;
-  }
+//  implement
 }
