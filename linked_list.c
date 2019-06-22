@@ -188,5 +188,20 @@ void reverseList(){
 }
 
 void sortList(){
-//  implement
+  struct node*sort=NULL;
+  int k;
+  temp=head;
+  while(temp->link!=NULL){
+    temp1=head;
+    while(temp1->link!=sort){
+      if(temp1->data>temp1->link->data){
+        k=temp1->data;
+        temp1->data=temp1->link->data;
+        temp1->link->data=k;
+      }
+      temp1=temp1->link;
+    }
+    sort=temp1;
+    temp=temp->link;
+  }
 }
