@@ -29,11 +29,13 @@ void printLeafNodes(struct node*);
 struct node* leafDelete(struct node*);
 int isBST(struct node*);
 int checkFull(struct node*);
+int checkComplete(struct node*,int,int);
 void printRange(struct node*,int,int);
 void deleteRange(struct node*,int,int);
 struct node* deleteOutsideRange(struct node*,int,int);
 void kthLargest(struct node*,int);
 void kthSmallest(struct node*,int);
+int countNodes(struct node*);
 
 
 int main(){
@@ -371,4 +373,21 @@ void kthSmallest(struct node* p,int k){
     return;
   }
   kthSmallest(p->r,k);
+}
+
+
+int countNodes(struct node* p){
+  if(!p)
+    return 0;
+  return(1+countNodes(p->l)+countNodes(p->r));
+}
+
+int checkComplete(struct node* p,int index,int count){
+  // index of root is 0,it's left child is 1 and right child is 2
+  if(!p)
+    return 1;
+  // if nodes are not as left as possiblereturn false
+  if(index>=count)
+    return 0;
+  return (checkComplete(p->l,2*index+1,count) && checkComplete(p->r,2*index+2,count));
 }
